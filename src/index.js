@@ -1,4 +1,4 @@
-const jsPDF = require('jspdf');
+const { jsPDF } = require('jspdf');
 
 const OutputType = {
   Save: "save", //save pdf as a file
@@ -12,6 +12,7 @@ const OutputType = {
 /**
  *
  * @param { {
+ * doc?: jsPDF;
  *  outputType: OutputType | string,
  *  returnJsPDFDocObject?: boolean,
  *  fileName: string,
@@ -80,6 +81,7 @@ const OutputType = {
  */
 function jsPDFInvoiceTemplate(props) {
   const param = {
+    doc: props.doc || new jsPDF(),
     outputType: props.outputType || "save",
     returnJsPDFDocObject: props.returnJsPDFDocObject || false,
     fileName: props.fileName || "",
@@ -163,7 +165,7 @@ function jsPDFInvoiceTemplate(props) {
     orientation: param.orientationLandscape ? "landscape" : "",
   };
 
-  var doc = new jsPDF(options);
+  var doc = param.doc;
 
   var docWidth = doc.internal.pageSize.width;
   var docHeight = doc.internal.pageSize.height;
