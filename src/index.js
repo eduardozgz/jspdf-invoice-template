@@ -1,4 +1,4 @@
-const jsPDF = require('jsPDF');
+const jsPDF = require('jspdf');
 
 const OutputType = {
   Save: "save", //save pdf as a file
