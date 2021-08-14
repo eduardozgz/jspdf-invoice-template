@@ -1,4 +1,4 @@
-import { jsPDF } from "jspdf";
+const jsPDF = require('jsPDF');
 
 const OutputType = {
   Save: "save", //save pdf as a file
@@ -8,8 +8,6 @@ const OutputType = {
   Blob: "blob", //return blob format of the doc,
   ArrayBuffer: "arraybuffer", //return ArrayBuffer format
 };
-
-export { OutputType, jsPDF };
 
 /**
  *
@@ -565,3 +563,7 @@ function jsPDFInvoiceTemplate(props) {
 }
 
 export default jsPDFInvoiceTemplate;
+
+module.exports = jsPDFInvoiceTemplate;
+module.exports.OutputType = OutputType;
+module.exports.jsPDF = jsPDF;
