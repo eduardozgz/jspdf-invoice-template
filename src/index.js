@@ -562,8 +562,6 @@ function jsPDFInvoiceTemplate(props) {
   return returnObj;
 }
 
-export default jsPDFInvoiceTemplate;
-
 module.exports = jsPDFInvoiceTemplate;
 module.exports.OutputType = OutputType;
 module.exports.jsPDF = jsPDF;
